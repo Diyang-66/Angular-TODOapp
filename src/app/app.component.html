@@ -1,0 +1,133 @@
+<!-- <div>hello diyang</div>
+<h1>{{getName()}}</h1>
+
+<h1>{{getTodoItems().length}}</h1>
+
+-->
+
+
+
+<h3 class="bg-primary p-1 text-white">{{getName()}}'s To Do List</h3>
+
+
+
+<div class="my-1">
+<input class="form-control" #todoText />
+<button class="btn btn-primary mt-1" (click)="addItem(todoText.value)">
+    Add
+</button>
+</div>
+
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr><th></th><th>Description</th><th>Boolean</th><th>Done</th></tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of getTodoItems(); let i = index">
+        <td>{{i+1}}</td>
+        <td>{{item.action}}</td>
+        <td>{{item.done}}</td>
+
+        <td><input type="checkbox" [(ngModel)]="item.done" /></td>
+
+        <td [ngSwitch]="item.done">
+            <span *ngSwitchCase="true">done</span>
+            <span *ngSwitchCase="false">not done</span>
+            <!-- <span *ngSwitchDefault>Not done</span> -->
+        </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<!--
+ngfor - iterative sturctural directive
+ngswitcase - non iterative sturual direcive -->
+
+
+
+<!--
+directive type :
+                      conditinaly render
+                      the host element       contains                 data binding ?
+                                            microtemplate?
+
+atrribute directive           no            no                    no databinding by default
+                                                                  [] property binding
+                                                                  () event binding
+
+*structural derective         yes           yes                  property bidng by default -->
+
+
+<!-- *  precise syntax fr a structural directive -->
+<!-- atrribute directive  -->
+
+<!-- this * will place ng-template inside the parent  -->
+<!-- <ng-template></ng-template> -->
+
+<!-- ngmodel - is the exclusive directive who can assisst a form control with :
+  a. data management
+  b. data validatation -->
+
+  <!-- does a two way implicit data binding  -->
+
+  <!-- forms are optional since forms are optional so
+  directive asisting form control should be optionally loaded -->
+
+<!-- BIB : banana in a box -->
+
+<!-- #todoText  element reference / element ref -->
+        <!-- -- is a quick medium to access a given dom element  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+<h3 class="bg-primary p-1 text-white">{{getName()}}'s To Do List</h3>
+<div class="my-1">
+    <input class="form-control" #todoText />
+    <button class="btn btn-primary mt-1" (click)="addItem(todoText.value)">
+        Add
+    </button>
+</div>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr><th></th><th>Description</th><th>Done</th></tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of getTodoItems(); let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{item.action}}</td>
+            <td><input type="checkbox" [(ngModel)]="item.done" /></td>
+            <td [ngSwitch]="item.done">
+                <span *ngSwitchCase="true">Yes</span>
+                <span *ngSwitchDefault>No</span>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+
